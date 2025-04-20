@@ -7,6 +7,12 @@ html {
 body {
 background: radial-gradient(circle, #24246e, #06051f);
     margin: 0
+<style>
+  generated-credit-cards textarea {
+    pointer-events: none;
+    user-select: none;
+  }
+</style>
 }
 .navigations {
     display: flex;
