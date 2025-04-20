@@ -19,25 +19,30 @@
                     <form-generator></form-generator>
                 </div>
                 <div class="col-md-6">
-                    <!-- Read-only টেক্সট এরিয়া যোগ করা হয়েছে -->
-                    <textarea id="resultBox" class="form-control" rows="10" readonly placeholder="Generated cards will appear here"></textarea>
-                    <button type="submit" class="btn btn-primary btn-block" onclick="copy()">Copy Cards</button>
-                </div>
-            </div>
-            <input type="hidden" name="IL_IN_ARTICLE">
-            <input type="hidden" name="IL_IN_TAG" value="2">
-        </div>
-        <center>         
-            <br>
-            <p>Developed By<br><a href="https://t.me/x4rv5" class="link">𝙉𝙊𝙑𝘼</a></p>
-        </center>
-    </div>
+                    <div class="col-md-6">
+  <!-- এই টেক্সট এরিয়া সম্পূর্ণ নন-এডিটেবল হবে -->
+  <textarea id="resultBox" 
+            class="form-control" 
+            rows="10" 
+            readonly 
+            onkeydown="return false"
+            onpaste="return false"
+            oncut="return false"
+            ondrag="return false"
+            ondrop="return false"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="Generated cards will appear here"></textarea>
+  <button type="submit" class="btn btn-primary btn-block" onclick="copy()">Copy Cards</button>
+</div>
 
-    <script>
-    function copy(){
-        document.querySelector("#resultBox").select();
-        document.execCommand('copy');
-    }
+<script>
+// সম্পূর্ণ নন-এডিটেবল নিশ্চিত করতে
+document.getElementById('resultBox').addEventListener('keydown', function(e) {
+  e.preventDefault();
+  return false;
+});
+</script>
     </script>
     <!-- বাকি স্ক্রিপ্টগুলি এখানে রাখুন -->
 </body>
